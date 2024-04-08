@@ -7,7 +7,6 @@ extern "C"
 {
  extern osMessageQueueId_t adcDataQueueHandle;
  uint32_t osQueueMsg;
- uint32_t counter = 0;
 }
 
 Model::Model() : modelListener(0)
@@ -22,7 +21,7 @@ void Model::tick()
   if(osMessageQueueGetCount(adcDataQueueHandle) > 0){
     osStatus = osMessageQueueGet(adcDataQueueHandle, &osQueueMsg, NULL, 100U);
     if(osStatus == osOK){
-    		modelListener->setNewAdcValue(osQueueMsg);
+      modelListener->setNewAdcValue(osQueueMsg);
     }
   }
 }

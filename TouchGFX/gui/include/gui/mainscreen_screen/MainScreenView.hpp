@@ -12,7 +12,10 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
     virtual void updateAdcValue(float newAdcValue);
+    virtual void handleTickEvent();
 protected:
+    float graphAdcData;
+    uint16_t tickCounter;
 };
 
 #endif // MAINSCREENVIEW_HPP

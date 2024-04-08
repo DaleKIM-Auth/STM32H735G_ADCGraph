@@ -68,6 +68,8 @@ void Error_Handler(void);
 #define FRAME_RATE_GPIO_Port GPIOB
 #define LCD_DISP_Pin GPIO_PIN_10
 #define LCD_DISP_GPIO_Port GPIOD
+#define DEBUG_Pin GPIO_PIN_2
+#define DEBUG_GPIO_Port GPIOH
 #define VSYNC_FREQ_Pin GPIO_PIN_0
 #define VSYNC_FREQ_GPIO_Port GPIOA
 

@@ -11,6 +11,10 @@
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/graph/GraphWrapAndClear.hpp>
+#include <touchgfx/widgets/graph/GraphElements.hpp>
+#include <touchgfx/widgets/graph/GraphLabels.hpp>
+#include <touchgfx/widgets/canvas/PainterRGB888.hpp>
 
 class MainScreenViewBase : public touchgfx::View<MainScreenPresenter>
 {
@@ -32,6 +36,13 @@ protected:
     touchgfx::TextArea titleADC;
     touchgfx::TextAreaWithOneWildcard adcValue;
     touchgfx::TextArea adcUnit;
+    touchgfx::GraphWrapAndClear<30> dynamicGraph1;
+    touchgfx::GraphElementGridX dynamicGraph1MajorXAxisGrid;
+    touchgfx::GraphElementGridY dynamicGraph1MajorYAxisGrid;
+    touchgfx::GraphLabelsY dynamicGraph1MajorYAxisLabel;
+    touchgfx::GraphElementLine dynamicGraph1Line1;
+    touchgfx::PainterRGB888 dynamicGraph1Line1Painter;
+    touchgfx::TextArea textArea1;
 
     /*
      * Wildcard Buffers
@@ -40,6 +51,12 @@ protected:
     touchgfx::Unicode::UnicodeChar adcValueBuffer[ADCVALUE_SIZE];
 
 private:
+
+    /*
+     * Canvas Buffer Size
+     */
+    static const uint32_t CANVAS_BUFFER_SIZE = 7200;
+    uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
 
 };
 

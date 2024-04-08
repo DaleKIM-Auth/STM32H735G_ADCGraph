@@ -3,6 +3,7 @@
     "Screens": [
       {
         "Name": "MainScreen",
+        "CanvasBufferSize": 7200,
         "Components": [
           {
             "Type": "Image",
@@ -30,9 +31,9 @@
           {
             "Type": "TextArea",
             "Name": "adcValue",
-            "X": 219,
+            "X": 211,
             "Y": 248,
-            "Width": 94,
+            "Width": 59,
             "Height": 24,
             "TextId": "__SingleUse_UN8P",
             "TextRotation": "0",
@@ -51,11 +52,94 @@
           {
             "Type": "TextArea",
             "Name": "adcUnit",
-            "X": 327,
+            "X": 270,
             "Y": 248,
             "Width": 14,
             "Height": 24,
             "TextId": "__SingleUse_KJNW",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "DynamicGraph",
+            "Name": "dynamicGraph1",
+            "Y": 58,
+            "Width": 480,
+            "Height": 174,
+            "DataSeed": -467480809,
+            "NumberOfValues": 30,
+            "MaxY": 4.0,
+            "Precision": "0.01",
+            "UseCustomVisibleDataPointRange": true,
+            "LastIndex": 28,
+            "MapDataPointIndexToCustomValue": true,
+            "LabelSizeTop": 13,
+            "LabelSizeBottom": 8,
+            "LabelSizeLeft": 28,
+            "LabelSizeRight": 2,
+            "PaddingTop": 2,
+            "PaddingLeft": 7,
+            "GraphType": "GraphWrapClear",
+            "GraphDrawers": [
+              {
+                "Type": "LineDrawer",
+                "LineWidth": 2,
+                "FileNameImage": "",
+                "Color": {
+                  "Red": 20,
+                  "Green": 151,
+                  "Blue": 197
+                }
+              }
+            ],
+            "XAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 255,
+                "Green": 255,
+                "Blue": 255
+              },
+              "Interval": 1.0,
+              "LineWidth": 2,
+              "Alpha": 128
+            },
+            "YAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 255,
+                "Green": 255,
+                "Blue": 255
+              },
+              "Interval": 1.0,
+              "LineWidth": 2,
+              "Alpha": 128
+            },
+            "YAxisLabel": {
+              "Type": "GraphLabel",
+              "Interval": 1.0,
+              "DecimalSeparator": "Point",
+              "TextColor": {
+                "Red": 255,
+                "Green": 255,
+                "Blue": 255
+              },
+              "TextId": "__SingleUse_QC29",
+              "TextRotation": "0",
+              "Position": "Left"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 85,
+            "Width": 310,
+            "Height": 48,
+            "TextId": "__SingleUse_PEEV",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
