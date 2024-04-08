@@ -118,7 +118,7 @@ void AdcTaskFunc(void *argument);
 /* USER CODE BEGIN 0 */
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 {
-	//HAL_GPIO_TogglePin(DEBUG_GPIO_Port, DEBUG_Pin);
+	HAL_GPIO_TogglePin(DEBUG_GPIO_Port, DEBUG_Pin);
     osSemaphoreRelease(adcConvertCpltSemHandle);
 }
 
@@ -180,7 +180,7 @@ int main(void)
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
   /* USER CODE BEGIN 2 */
-  HAL_TIM_Base_Start_IT(&htim15);
+  
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -843,7 +843,8 @@ void AdcTaskFunc(void *argument)
 {
   /* USER CODE BEGIN AdcTaskFunc */
   osStatus_t osStatus;
-
+  
+  HAL_TIM_Base_Start(&htim15);
   HAL_ADC_Start_DMA(&hadc1, &aADCxData, 1);
     
   /* Infinite loop */
